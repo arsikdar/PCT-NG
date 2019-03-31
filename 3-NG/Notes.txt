@@ -1,0 +1,66 @@
+
+
+    NG topics
+
+    ===============================================
+    1. component based UI archtecture
+    ===============================================
+
+    ===============================================
+    2. data-binding
+    ===============================================
+
+    ------------------------------------------------
+        a. interpolation
+
+            in component's template ,
+
+            syntax :
+            
+               {{expression}}
+    ------------------------------------------------
+        b. property binding
+
+        syntax :
+            <element [property]="expression"/>
+
+    ------------------------------------------------
+        c. event binding    
+
+        syntax :
+            <element (event-name)="handler()" />
+
+    ------------------------------------------------
+
+
+
+
+    ===============================================
+    3. directives
+    ===============================================
+
+
+    ==> direction(s) for rendering UI
+
+    3 types of directives
+
+    ------------------------------------------------
+    1. component directive   
+    
+        ==> directive with template
+    ------------------------------------------------
+
+    2. structural  directive   
+
+        ==> to change component's template structure
+
+        e.g
+
+            ngIf, ngFor ...
+    ------------------------------------------------
+
+     3. attribute directive
+
+        ==> to change element's properties/attributes       
+
+    ------------------------------------------------    

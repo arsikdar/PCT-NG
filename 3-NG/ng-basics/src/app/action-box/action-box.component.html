@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    Action Box :<span class="badge badge-warning">{{totalCount}}</span>
+  </div>
+  <div class="card-body">
+    <!-- 
+      <app-action value="10" (onAction)="incrementTotalCount($event)"></app-action>
+      <app-action value="-10" (onAction)="incrementTotalCount($event)"></app-action> 
+    -->
+
+    <app-action *ngFor="let number of numbers" [value]="number" (onAction)="incrementTotalCount($event)">
+    </app-action>
+
+    <div style="clear: both;">
+      <app-action-summary [value]="totalCount"></app-action-summary>
+    </div>
+
+  </div>
+</div>
