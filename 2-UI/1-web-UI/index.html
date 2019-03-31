@@ -14,6 +14,35 @@
     <hr />
     <h1>web ui</h1>
     <hr />
+
+    <x-counter value="10"></x-counter>
+    <x-counter value="20"></x-counter>
+    <x-counter value="30"></x-counter>
+
+    <hr />
+
+    <div id="box1" class="alert alert-danger">
+        <input id="inp1" type="number" onchange="handleChange()" />
+        <hr />
+        <span id="disp" class="badge badge-primary">0</span>
+    </div>
+
+    <script>
+        let inp1 = document.getElementById('inp1');
+        let count = 0;
+        setInterval(() => {
+            count++;
+            inp1.value = count;
+            var event = new CustomEvent('change', { detail: count });
+            inp1.dispatchEvent(event)
+        }, 1000)
+
+        function handleChange() {
+            document.getElementById('disp').innerHTML = count <= 10 ? count : 'ooos';
+        }
+    </script>
+
+    <hr />
     <span id="time" class="badge badge-danger">time</span>
     <hr />
     <button class="btn btn-dark" id="todos-btn"> Load top-5 todos </button>
