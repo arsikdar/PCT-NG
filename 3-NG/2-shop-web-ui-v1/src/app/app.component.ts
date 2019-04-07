@@ -7,13 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  products: Array<any> = [
+  title = 'online-shopping';
+
+  products = [
     {
       id: 111,
       name: 'Laptop',
       price: 198000,
       canBuy: true,
-      image: 'assets/images/Laptop.png',
+      image: 'assets/Laptop.png',
       description: 'New Mac pro'
     },
     {
@@ -21,21 +23,19 @@ export class AppComponent {
       name: 'Mobile',
       price: 18000,
       canBuy: true,
-      image: 'assets/images/Mobile.png',
+      image: 'assets/Mobile.png',
       description: 'New  pro'
     }
   ]
 
-  currentTab: number = 1
+  currentTab = 1;
 
-  changeTab(tabIndex: number, e: any) {
-    e.preventDefault();
+  changeTab(tabIndex, event) {
+    event.preventDefault();
     this.currentTab = tabIndex;
   }
-
-  isTabSelected(tabIndex: number) {
+  isTabSelected(tabIndex) {
     return this.currentTab === tabIndex;
   }
-
 
 }
