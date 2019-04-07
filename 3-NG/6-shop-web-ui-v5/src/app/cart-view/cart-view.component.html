@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="card">
+  <div *ngIf="cartLines.length===0">cart is empty</div>
+  <div class="card" *ngIf="cartLines.length!==0">
     <div class="card-header">item(s) in cart</div>
     <div class="card-body">
       <table class="table table-sm table-bordered">
@@ -9,6 +10,8 @@
             <td>{{line.item.price|currency:'INR'}}</td>
             <td>{{line.qty}}</td>
             <td>{{line.item.price*line.qty|currency:'INR'}}</td>
+            <td><i (click)="manageQty(line.item,1)" class="fa fa-plus"></i></td>
+            <td><i (click)="manageQty(line.item,-1)" class="fa fa-minus"></i></td>
           </tr>
         </tbody>
       </table>
