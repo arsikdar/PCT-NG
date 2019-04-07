@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
+  @Input() cart;
+  @Output() buy = new EventEmitter();
+
   products = [
     {
       id: 111,
       name: 'Laptop',
       price: 198000,
+      curencyCode: 'INR',
       canBuy: true,
+      makeDate: Date.now(),
       image: 'assets/Laptop.png',
       description: 'New Mac pro'
     },
@@ -20,7 +25,9 @@ export class ProductListComponent implements OnInit {
       id: 222,
       name: 'Mobile',
       price: 18000,
+      curencyCode: 'INR',
       canBuy: true,
+      makeDate: Date.now(),
       image: 'assets/Mobile.png',
       description: 'New  pro'
     }
@@ -28,6 +35,10 @@ export class ProductListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleBuy(e) {
+    this.buy.emit(e)
   }
 
 }
