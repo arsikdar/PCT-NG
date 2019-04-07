@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
       id: 111,
       name: 'Laptop',
       price: 198000,
+      discount: 10000,
       curencyCode: 'INR',
       canBuy: true,
       makeDate: Date.now(),
