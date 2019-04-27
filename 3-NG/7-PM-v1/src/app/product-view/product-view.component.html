@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 col-sm-3 col-md-3">
+      <img [src]="product.image" class="img-fluid" />
+    </div>
+    <div class="col-9 col-sm-9 col-md-9">
+      <h5>{{product.name|uppercase}}</h5>
+      <h6>{{product.price|currency:'INR':undefined:'4.1-2'}}</h6>
+      <p>{{product.description}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+
+  <hr />
+  <h1> NG - dive in deep</h1>
+  <hr />
+
+
+  <button class="btn btn-success" (click)="processWithinAngularZone()">
+    start in zone : <span class="badge">{{progress1}} %</span>
+  </button>
+
+  <button class="btn btn-danger" (click)="processOutsideAngularZone()">
+    start outside zone : <span class="badge">{{progress2}} %</span>
+  </button>
+
+  <hr />
+
+  <app-product [product]="product"></app-product>
+
+
+</div>

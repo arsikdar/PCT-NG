@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-8 col-md-7">
+      <div class="card">
+        <div class="card-header">Product Form</div>
+        <div class="card-body">
+          <!--
+          <hr />
+          <pre>
+            {{productForm.value|json}}
+          </pre>
+          <hr />
+          <pre>
+            is pristine : {{productForm.pristine}}
+            is dirty    : {{productForm.dirty}}
+
+            is valid    : {{productForm.valid}}
+            is invalid  : {{productForm.invalid}}
+
+            is touched  : {{productForm.touched}}
+            is untouched: {{productForm.untouched}}
+         </pre>
+         <hr />
+          <pre>
+            is pristine : {{productForm.get('price').pristine}}
+            is dirty    : {{productForm.get('price').dirty}}
+
+            is valid    : {{productForm.get('price').valid}}
+            is invalid  : {{productForm.get('price').invalid}}
+
+            is touched  : {{productForm.get('price').touched}}
+            is untouched: {{productForm.get('price').untouched}}
+         </pre>
+
+         <hr />
+
+        -->
+          <form [formGroup]="productForm"  (submit)="handleForm($event)">
+            <input type="hidden" formControlName="id" />
+            <div class="form-group">
+              <label>Name</label>
+              <input class="form-control" formControlName="name" />
+              <!--
+              <div class="text-danger" *ngIf="productForm.get('name').touched">
+                <div *ngIf="productForm.get('name').errors?.required">Name is Required</div>
+                <div *ngIf="productForm.get('name').errors?.minlength"> > 3 chars</div>
+              </div>
+              -->
+              <div class="text-danger">{{productFormErrors.name}}</div>
+            </div>
+            <div class="form-group">
+              <label>Price</label>
+              <input class="form-control" formControlName="price" />
+            </div>
+            <div class="form-group">
+              <label>Image</label>
+              <input class="form-control" formControlName="image" />
+              <div *ngIf="productForm.get('image').errors?.required" class="text-danger">Image is Required</div>
+            </div>
+            <div class="form-group">
+              <label>Can Buy?</label>
+              <input (click)="handleCanBuy($event)" type="checkbox" class="form-control" formControlName="canBuy">
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control" formControlName="description"></textarea>
+              <div *ngIf="productForm.get('description').errors?.bad" class="text-danger">No bad words in description</div>
+            </div>
+            <button [disabled]="productForm.invalid" class="btn btn-dark">save</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
